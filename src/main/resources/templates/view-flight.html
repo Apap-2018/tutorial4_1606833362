@@ -10,6 +10,8 @@
 	
 	<h3>View Flight</h3>
 	<div th:each="flight : ${flights}"> 
+		<p th:text="'Nomor Penerbangan: ' + ${flight.getFlightNumber()}"></p>
+		<p th:text="'Rute Penerbangan: '+${flight.getOrigin()}+' - '+${flight.getDestination()}"></p>
     	<p th:text="'Nama Pilot: ' + ${flight.getPilot().getName()}"></p>
     	<p th:text="'Nomor Lisensi Pilot: ' + ${flight.getPilot().getLicenseNumber()}"></p>
 		<p>=========================</p>
