@@ -28,6 +28,7 @@
         <p th:text="'Asal Penerbangan: ' + ${flight.getOrigin()}"></p>
         <p th:text="'Tujuan Penerbangan: ' + ${flight.getDestination()}"></p>
         <p th:text="'Waktu Penerbangan: ' + ${flight.getTime()}"></p>
+        <button><a th:href="@{'/flight/delete/'+ ${pilot.licenseNumber}}">Delete Flight</a></button>
         <p>=========================</p>
     </div>
     
