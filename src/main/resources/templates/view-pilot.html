@@ -14,7 +14,9 @@
 	<p th:text="'Name: ' + ${pilot.name}"></p>
 	<p th:text="'Fly Hour: ' + ${pilot.flyHour}"></p>
 	
-	<td><a th:href="@{'/flight/add/'+ ${pilot.licenseNumber}}">Add Flight</a></td>
+	<button><a th:href="@{'/flight/add/'+ ${pilot.licenseNumber}}">Add Flight</a></button>
+	<br>
+	<button><a th:href="@{'/pilot/delete/'+ ${pilot.licenseNumber}}">Delete Pilot</a></button>
 	
 	<br><br>
 	<p>=========================</p>
