@@ -16,12 +16,17 @@
 	
 	<td><a th:href="@{'/flight/add/'+ ${pilot.licenseNumber}}">Add Flight</a></td>
 	
+	<br><br>
+	<p>=========================</p>
 	<h3>List of Flights:</h3>
+	<p>=========================</p>
+
     <div th:each="flight : ${flights}">
         <p th:text="'Nomor Penerbangan: ' + ${flight.getFlightNumber()}"></p>
         <p th:text="'Asal Penerbangan: ' + ${flight.getOrigin()}"></p>
         <p th:text="'Tujuan Penerbangan: ' + ${flight.getDestination()}"></p>
         <p th:text="'Waktu Penerbangan: ' + ${flight.getTime()}"></p>
+        <p>=========================</p>
     </div>
     
 </body>
