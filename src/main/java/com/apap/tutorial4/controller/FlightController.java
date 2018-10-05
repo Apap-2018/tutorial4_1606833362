@@ -1,5 +1,7 @@
 package com.apap.tutorial4.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -59,6 +61,14 @@ public class FlightController {
     private String updateFlightSubmit (@ModelAttribute FlightModel flight) {
         flightService.updateFlight(flight, flight.getFlightNumber());
         return "update";
+    }
+    
+    @RequestMapping("/flight/view")
+    public String view(Model model){
+        List<FlightModel> flight = flightService.getFlights();
+
+        model.addAttribute("flights", flight);
+        return"view-flight";
     }
 	
 }

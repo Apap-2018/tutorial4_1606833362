@@ -42,4 +42,9 @@ public class FlightServiceImpl implements FlightService{
         return flightDB.findByFlightNumber(flightNumber);
     }
 
+	@Override
+	public List<FlightModel> getFlights() {
+		return flightDB.findAll();
+	}
+
 }

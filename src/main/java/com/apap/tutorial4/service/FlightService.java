@@ -9,4 +9,5 @@ public interface FlightService {
 	FlightModel findFlight(Long id);
 	void updateFlight (FlightModel flight, String flightNumber);
 	FlightModel getFlightDetailByFlightNum(String flightNumber);
+	List<FlightModel> getFlights();
 }
