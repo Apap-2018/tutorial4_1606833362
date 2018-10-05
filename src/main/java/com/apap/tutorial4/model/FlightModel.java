@@ -36,7 +36,7 @@ public class FlightModel implements Serializable{
 	private Date time;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "pilot_licenseNumber", referencedColumnName = "license_number", nullable = false)
+	@JoinColumn(name = "pilot_license_number", referencedColumnName = "license_number", nullable = false)
 	@OnDelete(action = OnDeleteAction.NO_ACTION)
 	@JsonIgnore
 	private PilotModel pilot;

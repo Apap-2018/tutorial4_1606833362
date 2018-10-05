@@ -33,5 +33,14 @@ public class PilotController {
 		pilotService.addPilot(pilot);
 		return "add";
 	}
+	
+	@RequestMapping(value = "/pilot/view")
+	private String viewPilot(@RequestParam("licenseNumber") String licenseNumber, Model model) {
+		PilotModel pilot = pilotService.getPilotDetailByLicenseNumber(licenseNumber);
+
+		model.addAttribute("pilot", pilot);
+		model.addAttribute("flights", pilot.getPilotFlight());
+		return "view-pilot";
+	}
 
 }
