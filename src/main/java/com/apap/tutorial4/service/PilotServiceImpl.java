@@ -28,6 +28,14 @@ public class PilotServiceImpl implements PilotService{
 	public void deletePilot(PilotModel pilot) {
 		pilotDB.delete(pilot);
 	}
+
+	@Override
+	public void updatePilot(PilotModel pilot, String licenseNumber) {
+		PilotModel pilotUp = pilotDB.findByLicenseNumber(licenseNumber);
+		pilotUp.setName(pilot.getName());
+		pilotUp.setFlyHour(pilot.getFlyHour());
+		pilotDB.save(pilotUp);
+	}
 	
 
 }

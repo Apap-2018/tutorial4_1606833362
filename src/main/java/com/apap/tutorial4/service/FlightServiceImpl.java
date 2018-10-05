@@ -1,5 +1,7 @@
 package com.apap.tutorial4.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,5 +30,16 @@ public class FlightServiceImpl implements FlightService{
 	public FlightModel findFlight(Long id) {
 		return flightDB.getOne(id);
 	}
+
+	@Override
+	public void updateFlight(FlightModel flight, String flightNumber) {
+		flight.setFlightNumber(flightNumber);
+		flightDB.save(flight);
+	}
+
+    @Override
+    public FlightModel getFlightDetailByFlightNum(String flightNumber) {
+        return flightDB.findByFlightNumber(flightNumber);
+    }
 
 }
